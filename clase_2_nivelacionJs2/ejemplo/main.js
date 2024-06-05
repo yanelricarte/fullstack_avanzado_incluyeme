@@ -1,17 +1,18 @@
-//Espera a que el contenido del DOM este cargado
-
+//Espera a que el contenido del DOM este completamnete cargado
 document.addEventListener('DOMContentLoaded', function(){
+// Asocia la función agregarMascota al evento 'click' del botón 'agregarMascota'
   document.getElementById('agregarMascota').addEventListener('click', agregarMascota);
 });
 
 /** 
- * Función para agregar nueva mascota a la lista
+ * Función para agregar una nueva mascota a la lista
  */
 
 function agregarMascota(){
-//Obtenemos el valor del input 'nuevaMascota' y eliminamos espacios en blanco
+  //Obtenemos el valor del input 'nuevaMascota' y eliminamos espacios en blanco
   const nombreMascota = document.getElementById("nuevaMascota").value.trim();
 
+  //Verifica si el campo de la enterda esta vacío. Si es así, muestra un alert
   if(nombreMascota ==""){
     alert("Por favor, ingrese el nombre de la mascota");
     return;
