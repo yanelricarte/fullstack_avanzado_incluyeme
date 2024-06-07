@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f9;
+
+}
+
+.header {
+  background-color: rgb(171, 128, 201);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+
+}
+
+.main {
+  padding: 2rem;
+}
+
+.title {
+  color: #333;
+}
+
+
+.input-section {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#nuevaMascota {
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 25rem;
+}
+
+#agregarMascota {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  margin-left: 1rem;
+  border: none;
+  background-color: rgb(145, 108, 171);
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#agregarMascota:hover {
+  background-color: rgb(138, 88, 174);
+
+}
+
+#listaMascotas {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mascota {
+  font-size: 1.6rem;
+  display: flex;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0, 0.1);
+
+}
+
+.mascota button{
+  padding: 0.8rem 2rem;
+  margin-left: 2rem;
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+}
+
+.footer {
+  background-color: #767474;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
