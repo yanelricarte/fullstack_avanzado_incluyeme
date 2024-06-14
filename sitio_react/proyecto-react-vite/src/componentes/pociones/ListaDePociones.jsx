@@ -1,6 +1,6 @@
 import Pocion from "./Pocion";
 
-const ListaDePociones = ({ pociones }) =>{
+const ListaDePociones = ({ pociones, completarPocion, eliminarPocion }) =>{
   return(
     <div>
       <h2> Invetario de Pociones </h2>
@@ -8,6 +8,8 @@ const ListaDePociones = ({ pociones }) =>{
         <Pocion 
         key={pocion.id}
         pocion={pocion}
+        completarPocion={completarPocion}
+        eliminarPocion={eliminarPocion}
         
         />
       ))}

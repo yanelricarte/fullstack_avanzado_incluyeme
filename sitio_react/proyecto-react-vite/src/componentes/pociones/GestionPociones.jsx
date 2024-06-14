@@ -18,21 +18,41 @@ const GestionPociones = () =>{
     localStorage.setItem('pociones', JSON.stringify(pociones))
   }, [pociones]);
 
+
+  //Marcar una poción como completada o no completada
+  const completarPocion = (id) => {
+    const nuevasPociones = pociones.map((pocion) =>
+    pocion.id === id ? { ...pocion, completada: !pocion.completada } : pocion
+    );
+    setPociones(nuevasPociones);
+};
+
+// Eliminar una poción 
+const eliminarPocion = (id) => {
+  const nuevasPociones = pociones.filter((pocion) => pocion.id !== id);
+  setPociones(nuevasPociones);
+};
+
   // Función para agregar una nueva poción a la lista
   const agregarPocion = (nombre) => {
     const nuevaPocion = {
       id: Date.now(), // Genera un ID único basado en el tiempo actual
-      nombre
+      nombre,
+      completada: false
     };
     // Actualiza el estado de pociones agregando la nueva poción
     setPociones([...pociones, nuevaPocion]);
   }
-
   return(
     <div className="contenedor-pociones">
       <h1 className="titulo"> Gestión de Pociones en Hogwarts</h1> 
       {/* Componente ListaDePociones que muestra todas las pociones */}
-      <ListaDePociones pociones={pociones} />
+      <ListaDePociones 
+      pociones={pociones}
+      completarPocion={completarPocion}
+      eliminarPocion={eliminarPocion}
+      
+      />
       {/* Componente FormularioDePociones para agregar nuevas pociones */}
       <FormularioDePociones agregarPocion={agregarPocion} />
     </div>
