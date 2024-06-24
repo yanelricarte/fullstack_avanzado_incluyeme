@@ -8,6 +8,7 @@ import Menu from './componentes/menu/Menu';
 import ListaCasas from './componentes/casas/ListaCasas'
 import FormularioDePociones from './componentes/pociones/FormularioDePociones'
 import GestionPociones from './componentes/pociones/GestionPociones'
+import ListaPersonajes from './componentes/personajes/ListaPersonajes'
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
       <Routes>
           <Route path="/" element={ <Seccion />}> </Route>
           <Route path="/pociones" element={ <GestionPociones />}> </Route>    
-          <Route path="/casas" element={ <ListaCasas />}> </Route>    
+          <Route path="/casas" element={ <ListaCasas />}> </Route> 
+          <Route path="/personajes" element={ <ListaPersonajes />}> </Route>       
         </Routes>
     </main>
 

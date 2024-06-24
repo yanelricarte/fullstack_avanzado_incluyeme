@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './Pociones.css';
 import ListaDePociones from "./ListaDePociones";
 import FormularioDePociones from "./FormularioDePociones";
 
