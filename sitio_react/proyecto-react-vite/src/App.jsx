@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Header from './componentes/header/Header'
-import Footer from './componentes/footer/Footer'
-import Seccion from './componentes/seccion/Seccion'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Footer from './componentes/footer/Footer';
+import Header from './componentes/header/Header';
+import Seccion from './componentes/seccion/Seccion';
+import GestionPociones from './componentes/pociones/GestionPociones';
 import Menu from './componentes/menu/Menu';
-import ListaCasas from './componentes/casas/ListaCasas'
-import FormularioDePociones from './componentes/pociones/FormularioDePociones'
-import GestionPociones from './componentes/pociones/GestionPociones'
-import ListaPersonajes from './componentes/personajes/ListaPersonajes'
+import ListaCasas from './componentes/casas/ListaCasas';
+import ListaPersonajes from './componentes/personajes/ListaPersonajes';
+import DetallePersonaje from './componentes/personajes/DetallePersonaje'
+
+
 
 function App() {
-
   return (
     <Router>
-    <div className='container'>
-    <Header />
-    <Menu />
-    <main>
-      <Routes>
-          <Route path="/" element={ <Seccion />}> </Route>
-          <Route path="/pociones" element={ <GestionPociones />}> </Route>    
-          <Route path="/casas" element={ <ListaCasas />}> </Route> 
-          <Route path="/personajes" element={ <ListaPersonajes />}> </Route>       
-        </Routes>
-    </main>
+      <div className="container">
+        <Header />
+        <Menu /> {/* Muestra el menú de pestañas */}
+        <main>
+          <Routes>
+            <Route path="/" element={<Seccion />} />
+            <Route path="/pociones" element={<GestionPociones />} />
+            <Route path="/casas" element={<ListaCasas />} />
+            <Route path="/personajes" element={<ListaPersonajes />} />
+            <Route path='/DetallePersonaje/:id' element={<DetallePersonaje />} />
 
-    <Footer />
-    </div>
+
+
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
