@@ -3,13 +3,14 @@ const app = express();
 const port = 3000;
 
 const path = require('path');
+const hbs = require('hbs') 
 
 //middleware para servir contenidos estaticos desde la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
-
+hbs.registerPartials(path.join(__dirname, 'views', 'partials')); // para parciales
 
 
 app.get('/', (req, res) => {
@@ -19,8 +20,11 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/sobre', (req, res) => {
-  res.send('sobre nosotros');
+app.get('/acerca', (req, res) => {
+  res.render('acerca', {
+    title: 'Acerca de nosotros',
+    message: 'Información sobre nuestro proyecto'
+  });
 });
 
 app.get('/contacto', (req, res) => {
@@ -36,7 +40,7 @@ app.get('/usuarios', (req, res) => {
 });
 
 
-
+//Método POST, PUT, DELETE
 app.post('/enviar.formualrio', (req, res) => {
   res.send('Formulario enviado');
 });
@@ -47,6 +51,11 @@ app.put('/actualizar-datos', (req, res) => {
 
 app.delete('/eliminar-datos', (req, res) => {
   res.send('Datos eliminados');
+});
+
+// Ruta para página 404
+app.use((req, res, next) => {
+  res.status(404).render('error404', { title: 'Página no encontrada' });
 });
 
 
