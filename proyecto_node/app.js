@@ -1,20 +1,25 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-
 const path = require('path');
-const hbs = require('hbs') 
+const hbs = require('hbs');
 
-//middleware para servir contenidos estaticos desde la carpeta public
+// Middleware para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Configuración de Handlebars
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
-hbs.registerPartials(path.join(__dirname, 'views', 'partials')); // para parciales
 
 
+// Registrar parciales
+hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
+
+
+
+// Rutas
 app.get('/', (req, res) => {
   res.render('index', {
+    layout: 'layouts/main',
     title: 'Inicio',
     message: 'Bienvenidos a nuestra aplicación express con Handlebars'
   });
@@ -22,45 +27,34 @@ app.get('/', (req, res) => {
 
 app.get('/acerca', (req, res) => {
   res.render('acerca', {
+    layout: 'layouts/main',
     title: 'Acerca de nosotros',
-    message: 'Información sobre nuestro proyecto'
+    message: 'Información sobre nuestra aplicacion.'
   });
 });
 
 app.get('/contacto', (req, res) => {
-  res.send('Contacto');
+  res.render('contacto', {
+    layout: 'layouts/main',
+    title: 'Contacto',
+    message: 'Página de contacto'
+  });
 });
 
 app.get('/usuarios', (req, res) => {
   const usuarios = [
-    {nombre: 'Cosme Fulano', email: 'cosme@gmail.com'},
-    {nombre: 'Cosmecito Fulanito', email: 'fulanito@gmail.com'}
+    { nombre: 'Cosme Fulano', email: 'cosme@gmail.com' },
+    { nombre: 'Cosmecito Fulanito', email: 'fulanito@gmail.com' }
   ];
   res.render('usuarios', { usuarios });
 });
 
-
-//Método POST, PUT, DELETE
-app.post('/enviar.formualrio', (req, res) => {
-  res.send('Formulario enviado');
-});
-
-app.put('/actualizar-datos', (req, res) => {
-  res.send('Datos actualizados');
-});
-
-app.delete('/eliminar-datos', (req, res) => {
-  res.send('Datos eliminados');
-});
-
-// Ruta para página 404
+// Manejo de errores 404
 app.use((req, res, next) => {
   res.status(404).render('error404', { title: 'Página no encontrada' });
 });
 
-
-
-
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+// Iniciar servidor
+app.listen(3000, () => {
+  console.log('Servidor corriendo en http://localhost:3000');
 });
