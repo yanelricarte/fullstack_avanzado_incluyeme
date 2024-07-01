@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+require('dotenv').config();
+
 const hbs = require('hbs');
+const { default: axios } = require('axios');
 
 // Middleware para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
@@ -48,6 +51,20 @@ app.get('/usuarios', (req, res) => {
   ];
   res.render('usuarios', { usuarios });
 });
+
+// Ruta para mostrar personajes
+app.get('/personajes', async(req, res) =>{
+  try{
+    const response = await axios.get('https://hp-api.herokuapp.com/api/characters');
+    const characters = response.data;
+    res.render('personajes', { characters});
+  } catch(error){
+    console.error('Error al obtener personajes', error);
+    res.status(500).send('Error al obtener personajes');
+  }
+})
+
+
 
 // Manejo de errores 404
 app.use((req, res, next) => {

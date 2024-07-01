@@ -8,7 +8,8 @@ body{
 }
 .container{
   margin: 2rem;
-  background-color: #dcdada;
+  background-color: #1c8e55;
+  padding: 2rem;
 }
 h1 {
   color: #dd581f;
