@@ -1,0 +1,19 @@
+<h1>Crear Nuevo Personaje</h1>
+<form action="/personajes/crear" method="POST" enctype="multipart/form-data">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required><br><br>
+
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" name="edad" required><br><br>
+
+  <label for="casa">Casa:</label>
+  <input type="text" id="casa" name="casa" required><br><br>
+
+  <label for="rol">Rol:</label>
+  <input type="text" id="rol" name="rol" required><br><br>
+
+  <label for="imagen">Imagen:</label>
+  <input type="file" id="imagen" name="imagen" accept=".jpg, .jpeg, .png" required><br><br>
+
+  <button type="submit">Crear Personaje</button>
+</form>
