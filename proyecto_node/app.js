@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const mongose = require("mongoose");
 const dotenv = require("dotenv");
 const hbs = require("hbs");
 const uploadRouter = require("./routes/uploadRoutes"); // Importa el router de upload

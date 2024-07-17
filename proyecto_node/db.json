@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "66918c4759f29619c4e143ba"
+  },
+  "nombre": "Harry Potter",
+  "edad": 1,
+  "casa": "Gryffindor",
+  "rol": "Estudiante",
+  "hechizos": [
+    "Expelliarmus",
+    "Patronus"
+  ],
+  "habilidades": [
+    "Vuelo en escoba",
+    "Oclumancia"
+  ],
+  "varita": "Madera de sauco"
+},
+{
+  "_id": {
+    "$oid": "66918fd659f29619c4e143c0"
+  },
+  "nombre": "Hermione Granger",
+  "edad": 11,
+  "casa": "Gryffindor",
+  "rol": "Estudiante",
+  "hechizos": [
+    "Lumos",
+    "Accio"
+  ],
+  "habilidades": [
+    "Lectura rápida",
+    "Magia no verbal"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66918fe559f29619c4e143c2"
+  },
+  "nombre": "Ron Weasley",
+  "edad": 15,
+  "casa": "Gryffindor",
+  "rol": "Estudiante",
+  "hechizos": [
+    "Wingardium Leviosa",
+    "Confundus"
+  ],
+  "habilidades": [
+    "Ajedrez mágico",
+    "Amistad con arañas"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66919da55233ce58692249cb"
+  },
+  "nombre": "Nevile Longbottom",
+  "edad": 1,
+  "casa": "Gryffindor",
+  "rol": "Estudiante",
+  "hechizos": [
+    "Expellarmus",
+    "Confundus"
+  ],
+  "habilidades": [
+    "Botanica",
+    "Valentia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "669802033f920b94f3f4e30e"
+  },
+  "nombre": "hermione",
+  "edad": 99,
+  "casa": "gryffindor",
+  "rol": "estuduante",
+  "imagen": "uploads\\779e4708acf461187eb816338fca17ba",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669803d0cdf6bb377b8f046b"
+  },
+  "nombre": "s",
+  "edad": 99,
+  "casa": "gryffindor",
+  "rol": "ss",
+  "imagen": "uploads\\f2d78bf67c54d98fdc219865c87f157d",
+  "__v": 0
+}]
