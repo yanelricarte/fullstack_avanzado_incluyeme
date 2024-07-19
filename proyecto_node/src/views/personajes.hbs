@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personajes</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    {{> header}}
+  </header>
+  <main>
+    <h1>Personajes</h1>
+    <ul>
+      {{#each personajes}}
+        <li>
+          <h2>{{nombre}}</h2>
+          <p>Edad: {{edad}}</p>
+          <p>Casa: {{casa}}</p>
+          <p>Rol: {{rol}}</p>
+          {{#if imagen}}
+          <img src="./uploads/{{imagen}}" alt="{{nombre}}" style="max-width: 300px;">
+          <p>Ruta de la imagen: /{{imagen}}</p>
+
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </main>
+
+</body>
+</html>

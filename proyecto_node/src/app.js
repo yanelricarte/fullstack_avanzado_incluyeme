@@ -1,12 +1,11 @@
-
 const express = require("express");
-const connectDB = require("./config/db"); // Importar la función connectDB para la conexión a MongoDB
+const connectDB = require("./config/db");
 const app = express();
 const path = require("path");
 const dotenv = require("dotenv");
 const hbs = require("hbs");
-const uploadRouter = require("./routes/uploadRoutes"); // Importa el router de upload
-const personajesRouter = require("./routes/personajes");
+const uploadRouter = require("./routes/uploadRoutes");
+const personajesRouter = require('./routes/personajesRoutes');
 
 // Cargar variables de entorno
 dotenv.config();
@@ -16,11 +15,11 @@ connectDB();
 
 // Configurar Handlebars como motor de plantillas
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "views"));
-hbs.registerPartials(path.join(__dirname, "views", "partials"));
+app.set("views", path.join(__dirname, "views")); 
+hbs.registerPartials(path.join(__dirname, "views", "partials")); 
 
 // Middleware para servir archivos estáticos desde la carpeta 'public'
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../public"))); 
 
 // Middleware para manejar rutas de carga de archivos
 app.use("/upload", uploadRouter);
@@ -31,7 +30,7 @@ app.use("/personajes", personajesRouter);
 // Ruta principal
 app.get("/", (req, res) => {
   res.render("index", {
-    layout: "layouts/main",
+    layout: "layouts/main", 
     title: "Inicio",
     message: "Bienvenidos a nuestra aplicación de carga de archivos",
   });
