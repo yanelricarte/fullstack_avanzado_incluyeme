@@ -24,4 +24,15 @@ router.get("/crear", (req, res) => {
 // Ruta para manejar la creación de un nuevo personaje
 router.post("/crear", upload.single("imagen"), personajesController.createPersonaje);
 
+// Ruta para mostrar el formulario de edición
+router.get('/edit/:id', personajesController.editPersonaje);
+
+// Ruta para manejar la actualización de un personaje
+router.post("/edit/:id", upload.single("imagen"), personajesController.updatePersonaje);
+
+
+// Ruta para eliminar un personaje
+router.get("/delete/:id", personajesController.deletePersonaje);
+
+
 module.exports = router;

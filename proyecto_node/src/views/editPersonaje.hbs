@@ -1,0 +1,18 @@
+<h1>Editar Personaje</h1>
+<form
+  action="/personajes/edit/{{personaje._id}}"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <label>Nombre:</label>
+  <input type="text" name="nombre" value="{{personaje.nombre}}" required />
+  <label>Edad:</label>
+  <input type="number" name="edad" value="{{personaje.edad}}" required />
+  <label>Casa:</label>
+  <input type="text" name="casa" value="{{personaje.casa}}" required />
+  <label>Rol:</label>
+  <input type="text" name="rol" value="{{personaje.rol}}" required />
+  <label>Imagen:</label>
+  <input type="file" name="imagen" />
+  <button type="submit">Actualizar</button>
+</form>

@@ -9,30 +9,51 @@ La estructura del proyecto es la siguiente:
 proyecto_node/
 │
 ├── public/ # Archivos estáticos como CSS, JS e imágenes
+
 │
 ├── src/
+
 │ ├── config/ # Configuración de la aplicación
+
 │ │ └── db.js # Configuración y conexión a MongoDB
+
 │ │
-│ ├── Controllers/ # Controladores de la aplicación
+│ ├── controllers/ # Controladores de la aplicación
+
 │ │ └── personajesControlles.js #
+
 │ ├── routes/ # Rutas de la aplicación
+
 │ │ ├── uploadRoutes.js # Rutas para la carga de archivos
+
 │ │ └── personajesRoutes.js # Rutas para la gestión de personajes
+
 │ │
 │ ├── views/ # Plantillas de Handlebars
+
 │ │ ├── layouts/ # Layouts de la aplicación
+
 │ │ │ └── main.hbs # Layout principal
+
 │ │ ├── partials/ # Partials reutilizables
+
 │ │ │ ├── header.hbs # Partial para el encabezado
+│ │ │ └── nav.hbs # Partial para el nav de página
 │ │ │ └── footer.hbs # Partial para el pie de página
+
 │ │ └── index.hbs # Vista principal
+
 │ │
 │ └── app.js # Archivo principal de la aplicación
+
 │
+
 ├── .env # Archivo de variables de entorno
+
 ├── .gitignore # Archivos y carpetas a ignorar por Git
+
 ├── package.json # Dependencias y scripts del proyecto
+
 └── README.md # Este archivo
 
 
@@ -47,7 +68,8 @@ proyecto_node/
 Instalar Dependencias:
 
 npm install
-Configurar Variables de Entorno:
+
+Configurar variables de Entorno:
 
 Crea un archivo .env en la raíz del proyecto y define las siguientes variables:
 
@@ -72,7 +94,9 @@ Los archivos estáticos como CSS, JavaScript e imágenes se colocan en la carpet
 
 Ejecución
 Para iniciar el servidor, utiliza el siguiente comando:
-npm app
+
+npm start 
+
 
 El servidor se ejecutará en el puerto definido en tu archivo .env, por defecto 3000. Accede a la aplicación en http://localhost:3000.
 

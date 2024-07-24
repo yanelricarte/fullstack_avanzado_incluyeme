@@ -21,9 +21,10 @@
           <p>Rol: {{rol}}</p>
           {{#if imagen}}
           <img src="./uploads/{{imagen}}" alt="{{nombre}}" style="max-width: 300px;">
-          <p>Ruta de la imagen: /{{imagen}}</p>
-
           {{/if}}
+          <a href="/personajes/edit/{{this._id}}">Editar</a>
+          <a href="/personajes/delete/{{this._id}}">Eliminar</a>
+
         </li>
       {{/each}}
     </ul>
