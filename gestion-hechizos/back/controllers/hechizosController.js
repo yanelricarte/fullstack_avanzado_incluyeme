@@ -42,3 +42,40 @@ exports.createHechizo = async (req, res) => {
   }
 };
 
+// Actualizar un hechizo por ID
+exports.updateHechizo = async (req, res) => {
+  try {
+    const hechizo = await Hechizo.findById(req.params.id);
+    if (hechizo) {
+      hechizo.nombre = req.body.nombre || hechizo.nombre;
+      hechizo.descripcion = req.body.descripcion || hechizo.descripcion;
+      hechizo.nivel = req.body.nivel || hechizo.nivel;
+      
+      const hechizoActualizado = await hechizo.save();
+      res.json(hechizoActualizado);
+    } else {
+      res.status(404).json({ message: 'Hechizo no encontrado' });
+    }
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+// Eliminar un hechizo por ID
+exports.deleteHechizo = async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ message: 'ID no válido' });
+  }
+
+  try {
+    const hechizo = await Hechizo.findById(req.params.id);
+    if (hechizo) {
+      await hechizo.deleteOne();
+      res.json({ message: 'Hechizo eliminado' });
+    } else {
+      res.status(404).json({ message: 'Hechizo no encontrado' });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};

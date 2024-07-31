@@ -10,6 +10,7 @@ import DetallePersonaje from './componentes/personajes/DetallePersonaje'
 import ListaHechizos from './componentes/hechizos/ListaHechizos';
 import DetalleHechizo from './componentes/hechizos/DetalleHechizo';
 import CrearHechizo from './componentes/hechizos/CrearHechizo';
+import EditarHechizo from './componentes/hechizos/EditarHechizo';
 
 
 
@@ -29,8 +30,7 @@ function App() {
             <Route path="/hechizos" element={< ListaHechizos />} />
             <Route path="/crear" element={<CrearHechizo />} />
             <Route path="/hechizos/:id" element={<DetalleHechizo />} />
-
-
+            <Route path="/editar-hechizo/:id" element={<EditarHechizo />} />
 
           </Routes>
         </main>

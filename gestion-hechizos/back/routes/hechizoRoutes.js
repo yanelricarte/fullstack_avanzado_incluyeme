@@ -6,7 +6,7 @@ const hechizoController = require('../controllers/hechizosController');
 router.get('/', hechizoController.getHechizos);
 router.get('/:id', hechizoController.getHechizoById);
 router.post('/', hechizoController.createHechizo);
-//router.put('/:id', hechizoController.updateHechizo);
-//router.delete('/:id', hechizoController.deleteHechizo);
+router.put('/:id', hechizoController.updateHechizo);
+router.delete('/:id', hechizoController.deleteHechizo);
 
 module.exports = router;
